@@ -9,7 +9,7 @@ const bodyparsar = require('body-parser')
 
 const api = require('./routes/api')
 
-const port = 3000
+const port = process.env.PORT || 3000
 
 const app = express()
 
@@ -32,7 +32,7 @@ mongoose.connect(dbConfig.url, {
 mongoose.set('useFindAndModify', false );
 
 
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }));
 
 app.use(bodyParsar.json())
 
